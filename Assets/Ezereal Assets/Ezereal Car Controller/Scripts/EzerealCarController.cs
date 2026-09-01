@@ -49,7 +49,7 @@ namespace Ezereal
         public float stopThreshold = 1f; // 1f default. At what speed car will make a full stop
         public float decelerationSpeed = 0.5f; // 0.5f default
         public float maxSteeringWheelRotation = 360f; // 360 for real steering wheel. 120 would be more suitable for racing.
-        public float recoveryHeight = 2f;
+        public float recoveryHeight = 10f;
 
         [Header("Drive Type")]
         public DriveTypes driveType = DriveTypes.RWD;
