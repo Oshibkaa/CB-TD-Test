@@ -49,6 +49,7 @@ namespace Ezereal
         public float stopThreshold = 1f; // 1f default. At what speed car will make a full stop
         public float decelerationSpeed = 0.5f; // 0.5f default
         public float maxSteeringWheelRotation = 360f; // 360 for real steering wheel. 120 would be more suitable for racing.
+        public float recoveryHeight = 2f;
 
         [Header("Drive Type")]
         public DriveTypes driveType = DriveTypes.RWD;
@@ -117,6 +118,19 @@ namespace Ezereal
             }
         }
 
+        private void RecoverVehicle()
+        {
+            float yRotation = transform.eulerAngles.y;
+            
+            vehicleRB.linearVelocity = Vector3.zero;
+            vehicleRB.angularVelocity = Vector3.zero;
+
+            vehicleRB.position = vehicleRB.position + Vector3.up * recoveryHeight;
+            vehicleRB.rotation = Quaternion.Euler(0f, yRotation, 0f);
+
+            Debug.Log("Vehicle recovery");
+        }
+        
         void OnStartCar()
         {
             isStarted = !isStarted;
@@ -412,7 +426,13 @@ namespace Ezereal
             }
         }
 
-
+        void Update()
+        {
+            if (Keyboard.current.rKey.wasPressedThisFrame)
+            {
+                RecoverVehicle();
+            }
+        }
 
         private void FixedUpdate()
         {

@@ -1,4 +1,5 @@
 {
+    "version": 1,
     "name": "Ezereal Car Controller",
     "maps": [
         {
@@ -126,15 +127,6 @@
                     "name": "SwitchCamera",
                     "type": "Button",
                     "id": "9a1db909-d00c-4f68-8429-05334d14d98a",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Restart",
-                    "type": "Button",
-                    "id": "df6fff5d-c901-4e57-be3a-9302c349469e",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
@@ -370,17 +362,6 @@
                     "processors": "",
                     "groups": "",
                     "action": "UpShift",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "568a48ee-65ec-491d-9788-dc4599d070a3",
-                    "path": "<Keyboard>/r",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Restart",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
